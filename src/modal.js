@@ -11,6 +11,7 @@ const botonVaciar = document.getElementById('vaciar-carrito');
 const botonComprar = document.getElementById('boton-comprar');
 
 
+
 // Le agregamos eventos a las variables para que los botones cumplan con sus respectivos funciones
 
 abrirCarrito.addEventListener('click', () => {
@@ -24,10 +25,6 @@ cerrarCarrito.addEventListener('click', () => {
 
 modalContenedor.addEventListener('click', () => {
     cerrarCarrito.click()
-    Toastify({
-        text: "Producto añadido",
-        duration: "3000"
-    }).showToast();
 });
 
 
@@ -40,6 +37,10 @@ modalCarrito.addEventListener('click', (e) => {
         eliminarProductoCarrito(e.target.value)
     };
 });
+
+
+
+
 
 botonVaciar.addEventListener('click', () => {
     Swal.fire({
