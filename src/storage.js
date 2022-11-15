@@ -1,3 +1,5 @@
+// Se guarda en el storage los datos 
+
 const guardarCarritoStorage = (carritoDeCompras) => {
     localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
 };

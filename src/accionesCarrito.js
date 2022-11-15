@@ -2,7 +2,11 @@ import { actualizarTotalesCarrito } from './actualizarCarrito.js';
 import { obtenerProductos } from './obtenerProductos.js';
 import { obtenerCarritoStorage } from './storage.js';
 
+
+
+// Creamos una variable con el array vacio
 let carrito = [];
+
 
 const validarProductoRepetido = (productoId) => {
 
@@ -12,7 +16,7 @@ const validarProductoRepetido = (productoId) => {
 
     const productoRepetido = carrito.find(producto => producto.id === productoId);
 
-    if (productoRepetido){
+    if (productoRepetido) {
         productoRepetido.cantidad++;
         const cantidadProducto = document.getElementById(`cantidad${productoRepetido.id}`);
         cantidadProducto.innerText = `cantidad: ${productoRepetido.cantidad}`;
@@ -27,8 +31,8 @@ const agregarAlCarrito = async (productoId) => {
     const contenedor = document.getElementById('carrito-contenedor');
     const producto = productos.find(producto => producto.id === productoId);
     carrito.push(producto);
-   
-    
+
+
 
     const div = document.createElement('div');
     div.classList.add('productoEnCarrito');
@@ -68,7 +72,8 @@ const eliminarProductoCarrito = (productoId) => {
         title: 'Producto eliminado con éxito',
         showConfirmButton: false,
         timer: 1500
-      });
+    });
+
 
 
     actualizarTotalesCarrito(carritoActualizado);
